@@ -1,0 +1,208 @@
+Información:
+Arquitectura: 64 bits
+Número de nucleos: 4
+Velocidad del procesador: máximo 1.9 GHz
+Temaño de RAM: 8GB
+Espacio de memoria asignado a la JVM: 1.8 GB
+
+Con seguridad:
+Threads:1 
+
+Hora inicio: 2016-11-07T10:17:42.754
+Hora Fin: 2016-11-07T11:09:00.329
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 760
+Tiempo promedio de respuesta: 2
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T11:09:00.329
+Hora Fin: 2016-11-07T11:33:38.183
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 732
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T11:33:38.183
+Hora Fin: 2016-11-07T11:43:26.204
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 727
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+
+Threads: 2
+
+Hora inicio: 2016-11-07T12:02:11.849
+Hora Fin: 2016-11-07T12:26:44.348
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 721
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T12:26:44.349
+Hora Fin: 2016-11-07T12:39:17.821
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 742
+Tiempo promedio de respuesta: 2
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T12:39:17.821
+Hora Fin: 2016-11-07T12:44:20.073
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 742
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Threads:8
+
+
+Hora inicio: 2016-11-07T12:51:25.338
+Hora Fin: 2016-11-07T13:02:22.231
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 1272
+Tiempo promedio de respuesta: 2
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:02:22.231
+Hora Fin: 2016-11-07T13:07:40.852
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 1222
+Tiempo promedio de respuesta: 2
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:07:40.852
+Hora Fin: 2016-11-07T13:09:55.371
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 1251
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+
+
+Sin seguridad:
+
+Thread:1
+
+Hora inicio: 2016-11-07T13:39:27.882
+Hora Fin: 2016-11-07T13:40:54.248
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:40:54.249
+Hora Fin: 2016-11-07T13:42:17.647
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:42:17.647
+Hora Fin: 2016-11-07T13:43:24.729
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+Thread: 2
+
+Hora inicio: 2016-11-07T13:48:11.782
+Hora Fin: 2016-11-07T13:49:34.881
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:49:34.882
+Hora Fin: 2016-11-07T13:50:58.426
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:50:58.426
+Hora Fin: 2016-11-07T13:52:05.648
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+Thread: 8
+
+Hora inicio: 2016-11-07T13:54:43.266
+Hora Fin: 2016-11-07T13:56:06.329
+Numero de transacciones: 400
+Tiempo entre transacciones: 20
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:56:06.330
+Hora Fin: 2016-11-07T13:57:30.152
+Numero de transacciones: 200
+Tiempo entre transacciones: 40
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+Hora inicio: 2016-11-07T13:57:30.152
+Hora Fin: 2016-11-07T13:58:37.753
+Numero de transacciones: 80
+Tiempo entre transacciones: 80
+
+Tiempo promedio de autorización: 1
+Tiempo promedio de respuesta: 1
+Promedio de solicitudes no respondidas: 0.0
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\Cliente"/>
+			<item value="D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11"/>
+			<item value="D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\ServidorC3"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="177" key="DIALOG_X_ORIGIN"/>
+		<item value="336" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
