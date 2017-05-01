@@ -31,7 +31,7 @@ public class Generator {
 			@SuppressWarnings("unused")
 			Generator generator = new Generator();
 		}
-		//Este es el metodo que imprime todo
+//		Consolidado consolidado = new Consolidado();
 		consolidar();
 	}
 	

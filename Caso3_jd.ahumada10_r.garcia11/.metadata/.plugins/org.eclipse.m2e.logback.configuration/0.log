@@ -443,3 +443,12 @@
 2017-05-01 02:32:12,469 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\main\resources
 2017-05-01 02:32:12,470 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-05-01 02:32:12,481 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\test\resources
+2017-05-01 11:48:34,033 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-05-01 11:49:13,051 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 11:49:13,057 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\main\resources
+2017-05-01 11:49:13,060 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 11:49:13,065 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\test\resources
+2017-05-01 11:49:20,122 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 11:49:20,130 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\main\resources
+2017-05-01 11:49:20,131 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 11:49:20,142 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\test\resources
