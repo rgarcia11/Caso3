@@ -125,7 +125,7 @@ public class ClienteSeguro {
 
 	private void imprimirResultados() {
 		try{
-			File tiempos = new File("./data/tiempos-"+Generator.NUMBER_OF_TASKS+"-"+Generator.GAP_BETWEEN_TASKS+"-");
+			File tiempos = new File("./data/tiempos");
 			PrintWriter writer = new PrintWriter(new FileWriter(tiempos,true));
 			writer.println("tiempoAutenticacionServidor:"+ TimeUnit.MILLISECONDS.convert(tiempoAutenticacionServidor, TimeUnit.NANOSECONDS));
 			writer.println("tiempoAutenticacionCliente:"+ TimeUnit.MILLISECONDS.convert(tiempoAutenticacionCliente, TimeUnit.NANOSECONDS));

@@ -6,7 +6,6 @@ INDEX VERSION 1.129+D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\C
 781808.index
 2800558102.index
 3417200662.index
-801431031.index
 471236001.index
 2028109667.index
 414978335.index
@@ -21,6 +20,7 @@ INDEX VERSION 1.129+D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\C
 511171824.index
 1075794691.index
 985286902.index
+1554021034.index
 361492245.index
 351221734.index
 2855899100.index

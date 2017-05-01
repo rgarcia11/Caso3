@@ -29,22 +29,22 @@ public class ClienteSeguro {
 	private static final String algoritmoSimetrico = "AES";
 	private static final String algoritmoAsimetrico = "RSA";
 	private static final String algoritmoDigest = "HMACMD5";
-
+	
 	private Socket s;
 	private PrintWriter out;
 	private BufferedReader in;
-
+	
 	private PublicKey llaveServidor;
 	private KeyPair llaveCliente;
 	private SecretKey llaveSesion;
-
+	
 	//-------------------------
 	private ManejadorCertificado mc;
 	private KeyPair keyAsin;
 	private CifradorAsimetricoRSA cifradorAsim;
 	private CifradorSimetricoAES cifradorSim;
 	private CalculadorDigestHmacMD5 cmd;
-
+	
 	//-------------------------
 	private Long inicioAutenticacionServidor;
 	private Long tiempoAutenticacionServidor;
@@ -52,7 +52,7 @@ public class ClienteSeguro {
 	private Long tiempoAutenticacionCliente;
 	private Long inicioRespuesta;
 	private Long tiempoRespuesta;
-
+	
 	public ClienteSeguro(){
 		try{
 			//-------------
@@ -62,7 +62,7 @@ public class ClienteSeguro {
 			tiempoAutenticacionCliente = (long) 0;
 			tiempoAutenticacionServidor = (long) 0;
 			tiempoRespuesta = (long) 0;
-
+			
 			//-------------
 			cifradorAsim = new CifradorAsimetricoRSA();
 			keyAsin = cifradorAsim.darLlave();
@@ -74,66 +74,58 @@ public class ClienteSeguro {
 		}
 	}
 
-	public void conectar(){
-		try{
+	public void conectar() throws Exception{
 			s = new Socket(DIR, PUERTO);
+			System.out.println("puerquitos");
 			out = new PrintWriter(s.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-		}catch(Exception e){
-			try{
-				File tiempos = new File("./data/tiempos");
-				PrintWriter writer = new PrintWriter(new FileWriter(tiempos,true));
-				writer.println("ERROR:(");
-				writer.close();
-			}catch (Exception x){
-				x.printStackTrace();
-			}
-		}
 	}
 
 	public void conversar() throws Exception{
 		//Etapa 1 Inicio de sesion
-
+		
 		inicioSesion();
-
+		
 		//Etapa 2 Intercambio de CD
-
+		
 		llaveServidor = ManejadorCertificado.creationYProcesamiento(keyAsin,s.getOutputStream(),out, in);
-
+		
 		//Etapa 3 Autenticacion
 		BigInteger bg = enviarReto();
-
+		
 		recibirRespuestaReto(bg);
-
+		//Tiempo2 autenticacion del servidor
+		
+		//Tiempo1 autenticacion del cliente
 		manejarRetoServidor();
-
+		//Tiempo2 autenticacion del cliente
+		
 		//Recibo la llave de sesion
 		recibirLlaveSesion();
-
-
+		
+		
 		//Etapa 4 Consulta
-
+		
 		enviarConsulta();
-
+		
 		recibirRespuestaConsulta();
-
+		
 		imprimirResultados();
-
+		
 		System.out.println("Se termino!");
 	}
 
 
 	private void imprimirResultados() {
 		try{
-			File tiempos = new File("./data/tiempos-"+Generator.NUMBER_OF_TASKS+"-"+Generator.GAP_BETWEEN_TASKS+"-");
+			File tiempos = new File("./data/tiempos");
 			PrintWriter writer = new PrintWriter(new FileWriter(tiempos,true));
-			writer.println("tiempoAutenticacionServidor:"+ TimeUnit.MILLISECONDS.convert(tiempoAutenticacionServidor, TimeUnit.NANOSECONDS));
-			writer.println("tiempoAutenticacionCliente:"+ TimeUnit.MILLISECONDS.convert(tiempoAutenticacionCliente, TimeUnit.NANOSECONDS));
-			writer.println("tiempoRespuesta:"+ TimeUnit.MILLISECONDS.convert(tiempoRespuesta, TimeUnit.NANOSECONDS));
+			writer.println("autenticacionServidor:"+ TimeUnit.MILLISECONDS.convert(tiempoAutenticacionServidor, TimeUnit.NANOSECONDS));
+			writer.println("tRespuesta:"+ TimeUnit.MILLISECONDS.convert(tiempoRespuesta, TimeUnit.NANOSECONDS));
 			writer.close();
-		}catch (Exception e){
-			e.printStackTrace();
-		}		
+			}catch (Exception e){
+				e.printStackTrace();
+			}		
 	}
 
 	private void inicioSesion() throws Exception {
@@ -156,12 +148,11 @@ public class ClienteSeguro {
 	private void recibirRespuestaConsulta() throws Exception{
 		String rta = in.readLine();
 		//Tiempo2 consulta servidor!
-		tiempoRespuesta = System.nanoTime() - inicioRespuesta;
 		String[] rtaDividida = rta.split(":");
 		String respuestaCifradaS = rtaDividida[0];
 		byte[] respuestaCifrada = toByteArray(respuestaCifradaS);
 		String respuesta = CifradorSimetricoAES.descifrar(respuestaCifrada, llaveSesion);
-
+		
 		String respuestaHashCifradaS = rtaDividida[1];
 		byte[] respuestaHashCifrada = toByteArray(respuestaHashCifradaS);
 		String respuestaHash = CifradorSimetricoAES.descifrar(respuestaHashCifrada, llaveSesion);
@@ -185,7 +176,6 @@ public class ClienteSeguro {
 		String consultaCompleta = toHexString(consultaCifrada)+":"+toHexString(consultahHashCifrada);
 		System.out.println(consultaCompleta);
 		//Tiempo1 consulta!
-		inicioRespuesta = System.nanoTime();
 		out.println(consultaCompleta);
 	}
 
@@ -198,23 +188,20 @@ public class ClienteSeguro {
 	}
 
 	private void manejarRetoServidor() throws Exception {
-		//Tiempo1 autenticacion cliente
-		inicioAutenticacionCliente = System.nanoTime();
 		String retoServidor = in.readLine();
 		byte[] bytesCifrados = toByteArray(retoServidor);
 		byte[] bytes = cifradorAsim.descifrar(bytesCifrados);
 		bytesCifrados = CifradorAsimetricoRSA.cifrar(llaveServidor, bytes);
 		String rta = toHexString(bytesCifrados);
-		//Tiempo2 autenticacion cliente
-		tiempoAutenticacionCliente = System.nanoTime() - inicioAutenticacionCliente;
 		out.println(rta);
+		
 	}
 
 	private BigInteger recibirRespuestaReto(BigInteger bg) throws Exception {
 		String reto1rta = in.readLine();
 		byte[] bytesCifrados = toByteArray(reto1rta);
 		byte[] bytes = CifradorAsimetricoRSA.descifrar(cifradorAsim.getPrivate(), bytesCifrados);
-
+		
 		BigInteger respuestica = new BigInteger(bytes);
 		if(bg.intValue() != respuestica.intValue()){
 			out.println("ERROR");
@@ -234,35 +221,35 @@ public class ClienteSeguro {
 		byte [] bytes = bg.toByteArray();
 		byte [] bytesCifrados = CifradorAsimetricoRSA.cifrar(llaveServidor, bytes);
 		String reto1 = toHexString(bytesCifrados);
-
+		
 		//Tiempo1 autenticacion servidor
 		inicioAutenticacionServidor = System.nanoTime();
 		out.println(reto1);
 		return bg;
 	}
 
-
+	
 	//------ Metodos Auxiliares
-
+	
 	/**
 	 * Recibe un array de bytes y lo convierte en hexadecimal (es para enviar datos)
 	 * @param array de bytes
 	 * @return hexa
 	 */
 	public static String toHexString(byte[] array) {
-		return DatatypeConverter.printHexBinary(array);
+	    return DatatypeConverter.printHexBinary(array);
 	}
-
+	
 	/**
 	 * Recibe un string en hexa y lo convierte a arreglo de bytes (es para recibir datos)
 	 * @param s hexa
 	 * @return bytes
 	 */
 	public static byte[] toByteArray(String s) {
-		return DatatypeConverter.parseHexBinary(s);
+	    return DatatypeConverter.parseHexBinary(s);
 	}
-
-
+	
+	
 	//------ Main
 	public static void main(String[] args) {
 		ClienteSeguro ci = new ClienteSeguro();

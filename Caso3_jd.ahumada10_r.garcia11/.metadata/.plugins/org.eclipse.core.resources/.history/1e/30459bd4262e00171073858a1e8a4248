@@ -6,11 +6,12 @@ import uniandes.gload.core.Task;
 
 public class Generator {
 	private LoadGenerator generator;
-	public static final int NUMBER_OF_TASKS = 100;
-	public static final int GAP_BETWEEN_TASKS = 1000;
+	
 	public Generator(){
 		Task work = createTask();
-		generator = new LoadGenerator("Client - Server Load Test", NUMBER_OF_TASKS, work, GAP_BETWEEN_TASKS);
+		int numberOfTasks = 100;
+		int gapBetweenTasks = 1000;
+		generator = new LoadGenerator("Client - Server Load Test", numberOfTasks, work, gapBetweenTasks);
 		generator.generate();
 	}
 	
