@@ -66,8 +66,6 @@ public class Servidor implements Runnable {
 		int puerto = Integer.parseInt(br.readLine());
 		socket = new ServerSocket(puerto);
 
-		//NUMERO DE THREADS DEL SERVIDOR
-		//ESTO ES UN PARAMETRO DEL CASO3
 		int numTreads = 16;
 		ExecutorService executor = Executors.newFixedThreadPool(numTreads);
 

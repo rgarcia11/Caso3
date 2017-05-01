@@ -1,0 +1,285 @@
+package colpensiones;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+
+
+public class Consolidado {
+
+	public Consolidado (){
+		long[] totalAutenticacionServidor = new long[10];
+		long[] totalAutenticacionCliente = new long[10];
+		long[] totalTiempoRespuestaConsulta = new long[10];
+		int[] totalTransaccionesFallidas = new int[10];
+
+		long totalAutenticacionServidor1 = 0;
+		long totalAutenticacionServidor2 = 0;
+		long totalAutenticacionServidor3 = 0;
+		long totalAutenticacionServidor4 = 0;
+		long totalAutenticacionServidor5 = 0;
+		long totalAutenticacionServidor6 = 0;
+		long totalAutenticacionServidor7 = 0;
+		long totalAutenticacionServidor8 = 0;
+		long totalAutenticacionServidor9 = 0;
+		long totalAutenticacionServidor10 = 0;
+		long totalAutenticacionCliente9 = 0;
+		long totalAutenticacionCliente8 = 0;
+		long totalAutenticacionCliente7 = 0;
+		long totalAutenticacionCliente6 = 0;
+		long totalAutenticacionCliente5 = 0;
+		long totalAutenticacionCliente4 = 0;
+		long totalAutenticacionCliente3 = 0;
+		long totalAutenticacionCliente2 = 0;
+		long totalAutenticacionCliente10 = 0;
+		long totalAutenticacionCliente1 = 0;
+		long totalTiempoRespuestaConsulta1 = 0;
+		long totalTiempoRespuestaConsulta2 = 0;
+		long totalTiempoRespuestaConsulta3 = 0;
+		long totalTiempoRespuestaConsulta4 = 0;
+		long totalTiempoRespuestaConsulta5 = 0;
+		long totalTiempoRespuestaConsulta6 = 0;
+		long totalTiempoRespuestaConsulta7 = 0;
+		long totalTiempoRespuestaConsulta8 = 0;
+		long totalTiempoRespuestaConsulta9 = 0;
+		long totalTiempoRespuestaConsulta10 = 0;
+		int totalTransaccionesPerdidas1=0;
+		int totalTransaccionesPerdidas9=0;
+		int totalTransaccionesPerdidas8=0;
+		int totalTransaccionesPerdidas7=0;
+		int totalTransaccionesPerdidas6=0;
+		int totalTransaccionesPerdidas5=0;
+		int totalTransaccionesPerdidas4=0;
+		int totalTransaccionesPerdidas3=0;
+		int totalTransaccionesPerdidas2=0;
+		int totalTransaccionesPerdidas10=0;
+
+
+		int i = 0;
+		try{
+			//Leo los tiempos
+			FileReader fr = new FileReader("./data/tiempos-"+Generator.NUMBER_OF_TASKS+"-"+Generator.GAP_BETWEEN_TASKS+"-"+Generator.NUM_THREADS);
+			BufferedReader br = new BufferedReader(fr);
+			String pequenhaLinea = br.readLine();
+			while (pequenhaLinea!= null){
+				String [] lineaLeida = pequenhaLinea.split(":");
+				int indicador = i/(3*Generator.NUMBER_OF_TASKS);
+				if(lineaLeida[0].equals("ERROR")){
+					totalTransaccionesFallidas[indicador] = totalTransaccionesFallidas[indicador]+1;
+				}		
+				if (lineaLeida[0].equals("tiempoAutenticacionServidor")){
+					totalAutenticacionServidor[indicador] =totalAutenticacionServidor[indicador]+Integer.parseInt(lineaLeida[1]); 
+				}
+				if (lineaLeida[0].equals("tiempoAutenticacionCliente")){
+					totalAutenticacionCliente[indicador] =totalAutenticacionCliente[indicador]+Integer.parseInt(lineaLeida[1]); 
+				}
+				if (lineaLeida[0].equals("tiempoRespuestaConsulta")){
+					totalTiempoRespuestaConsulta[indicador] =totalTiempoRespuestaConsulta[indicador]+Integer.parseInt(lineaLeida[1]); 
+				}
+				if (lineaLeida[0].equals("ERROR")){
+					if(i<3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas1++;
+					else if (i<2*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas2++;
+					else if (i<3*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas3++;
+					else if (i<4*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas4++;
+					else if (i<5*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas5++;
+					else if (i<6*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas6++;
+					else if (i<7*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas7++;
+					else if (i<8*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas8++;
+					else if (i<9*3*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas9++;
+					else if (i<10*2*Generator.NUMBER_OF_TASKS)
+						totalTransaccionesPerdidas10++;
+				}					
+				if (lineaLeida[0].equals("tiempoAutenticacionServidor")){
+					if(i<2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor1+=Integer.parseInt(lineaLeida[1]);
+					else if (i<2*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor2+=Integer.parseInt(lineaLeida[1]);
+					else if (i<3*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor3+=Integer.parseInt(lineaLeida[1]);
+					else if (i<4*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor4+=Integer.parseInt(lineaLeida[1]);
+					else if (i<5*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor5+=Integer.parseInt(lineaLeida[1]);
+					else if (i<6*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor6+=Integer.parseInt(lineaLeida[1]);
+					else if (i<7*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor7+=Integer.parseInt(lineaLeida[1]);
+					else if (i<8*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor8+=Integer.parseInt(lineaLeida[1]);
+					else if (i<9*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor9+=Integer.parseInt(lineaLeida[1]);
+					else if (i<10*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionServidor10+=Integer.parseInt(lineaLeida[1]);
+				}
+				if (lineaLeida[0].equals("tiempoAutenticacionCliente")){
+					if(i<2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente1+=Integer.parseInt(lineaLeida[1]);
+					else if (i<2*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente2+=Integer.parseInt(lineaLeida[1]);
+					else if (i<3*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente3+=Integer.parseInt(lineaLeida[1]);
+					else if (i<4*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente4+=Integer.parseInt(lineaLeida[1]);
+					else if (i<5*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente5+=Integer.parseInt(lineaLeida[1]);
+					else if (i<6*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente6+=Integer.parseInt(lineaLeida[1]);
+					else if (i<7*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente7+=Integer.parseInt(lineaLeida[1]);
+					else if (i<8*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente8+=Integer.parseInt(lineaLeida[1]);
+					else if (i<9*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente9+=Integer.parseInt(lineaLeida[1]);
+					else if (i<10*2*Generator.NUMBER_OF_TASKS)
+						totalAutenticacionCliente10+=Integer.parseInt(lineaLeida[1]);
+				}
+				if (lineaLeida[0].equals("tiempoRespuestaConsulta")){
+					if(i<2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta1+=Integer.parseInt(lineaLeida[1]);
+					else if (i<2*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta2+=Integer.parseInt(lineaLeida[1]);
+					else if (i<3*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta3+=Integer.parseInt(lineaLeida[1]);
+					else if (i<4*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta4+=Integer.parseInt(lineaLeida[1]);
+					else if (i<5*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta5+=Integer.parseInt(lineaLeida[1]);
+					else if (i<6*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta6+=Integer.parseInt(lineaLeida[1]);
+					else if (i<7*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta7+=Integer.parseInt(lineaLeida[1]);
+					else if (i<8*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta8+=Integer.parseInt(lineaLeida[1]);
+					else if (i<9*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta9+=Integer.parseInt(lineaLeida[1]);
+					else if (i<10*2*Generator.NUMBER_OF_TASKS)
+						totalTiempoRespuestaConsulta10+=Integer.parseInt(lineaLeida[1]);
+				}
+
+				i++;
+				pequenhaLinea = br.readLine();
+
+			}
+			for (int j = 0; j < 10; j++) {
+				totalAutenticacionServidor[i] = Generator.NUMBER_OF_TASKS!=totalTransaccionesFallidas[i]? totalAutenticacionServidor[i] / (Generator.NUMBER_OF_TASKS-totalTransaccionesFallidas[i]):-1;	
+			}
+			long tiempoAutenticacionServidor1 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas1? totalAutenticacionServidor1 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas1):-1;
+			long tiempoAutenticacionServidor2 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas2? totalAutenticacionServidor2 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas2):-1;
+			long tiempoAutenticacionServidor3 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas3? totalAutenticacionServidor3 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas3):-1;
+			long tiempoAutenticacionServidor4 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas4? totalAutenticacionServidor4 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas4):-1;
+			long tiempoAutenticacionServidor5 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas5? totalAutenticacionServidor5 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas5):-1;
+			long tiempoAutenticacionServidor6 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas6? totalAutenticacionServidor6 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas6):-1;
+			long tiempoAutenticacionServidor7 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas7? totalAutenticacionServidor7 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas7):-1;
+			long tiempoAutenticacionServidor8 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas8? totalAutenticacionServidor8 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas8):-1;
+			long tiempoAutenticacionServidor9 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas9? totalAutenticacionServidor9 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas9):-1;
+			long tiempoAutenticacionServidor10 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas10? totalAutenticacionServidor10 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas10):-1;
+
+			long tiempoAutenticacionCliente1 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas1? totalAutenticacionCliente1 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas1):-1;
+			long tiempoAutenticacionCliente2 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas2? totalAutenticacionCliente2 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas2):-1;
+			long tiempoAutenticacionCliente3 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas3? totalAutenticacionCliente3 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas3):-1;
+			long tiempoAutenticacionCliente4 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas4? totalAutenticacionCliente4 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas4):-1;
+			long tiempoAutenticacionCliente5 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas5? totalAutenticacionCliente5 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas5):-1;
+			long tiempoAutenticacionCliente6 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas6? totalAutenticacionCliente6 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas6):-1;
+			long tiempoAutenticacionCliente7 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas7? totalAutenticacionCliente7 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas7):-1;
+			long tiempoAutenticacionCliente8 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas8? totalAutenticacionCliente8 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas8):-1;
+			long tiempoAutenticacionCliente9 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas9? totalAutenticacionCliente9 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas9):-1;
+			long tiempoAutenticacionCliente10 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas10? totalAutenticacionCliente10 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas10):-1;
+
+			long tiempoRespuestaConsulta1 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas1? totalTiempoRespuestaConsulta1 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas1):-1;
+			long tiempoRespuestaConsulta2 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas2? totalTiempoRespuestaConsulta2 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas2):-1;
+			long tiempoRespuestaConsulta3 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas3? totalTiempoRespuestaConsulta3 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas3):-1;
+			long tiempoRespuestaConsulta4 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas4? totalTiempoRespuestaConsulta4 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas4):-1;
+			long tiempoRespuestaConsulta5 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas5? totalTiempoRespuestaConsulta5 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas5):-1;
+			long tiempoRespuestaConsulta6 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas6? totalTiempoRespuestaConsulta6 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas6):-1;
+			long tiempoRespuestaConsulta7 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas7? totalTiempoRespuestaConsulta7 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas7):-1;
+			long tiempoRespuestaConsulta8 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas8? totalTiempoRespuestaConsulta8 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas8):-1;
+			long tiempoRespuestaConsulta9 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas9? totalTiempoRespuestaConsulta9 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas9):-1;
+			long tiempoRespuestaConsulta10 = Generator.NUMBER_OF_TASKS!=totalTransaccionesPerdidas10? totalTiempoRespuestaConsulta10 / (Generator.NUMBER_OF_TASKS-totalTransaccionesPerdidas10):-1;
+			br.close();
+
+			File res = new File("./data/consolidado-"+Generator.NUMBER_OF_TASKS+"-"+Generator.GAP_BETWEEN_TASKS+"-"+Generator.NUM_THREADS);
+			PrintWriter writer = new PrintWriter(new FileWriter(res,false));
+			writer.println("====Parametros!!=============================");
+			writer.println("Numero de transacciones por iteracion: "+Generator.NUMBER_OF_TASKS);
+			writer.println("Ramp-up de: "+Generator.GAP_BETWEEN_TASKS);
+			writer.println("Numero de threads: "+Generator.NUM_THREADS);
+
+			writer.println("====Iteracion 1=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor1);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente1);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta1);
+
+			writer.println("====Iteracion 2=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor2);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente2);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta2);
+
+			writer.println("====Iteracion 3=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor3);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente3);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta3);
+
+			writer.println("====Iteracion 4=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor4);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente4);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta4);
+
+			writer.println("====Iteracion 5=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor5);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente5);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta5);
+
+			writer.println("====Iteracion 6=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor6);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente6);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta6);
+
+			writer.println("====Iteracion 7=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor7);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente7);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta7);
+
+			writer.println("====Iteracion 8=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor8);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente8);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta8);
+
+			writer.println("====Iteracion 9=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor9);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente9);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta9);
+
+			writer.println("====Iteracion 10=============================");
+			writer.println(	"tiempo de autenticacion del servidor: " +  tiempoAutenticacionServidor10);
+			writer.println(	"tiempo de autenticacion del cliente: " +  tiempoAutenticacionCliente10);
+			writer.println(	"tiempo de recibir respuesta a la consulta: " +  tiempoRespuestaConsulta10);
+
+			writer.close();
+
+		}catch(Exception e){
+
+		}
+	}
+
+	public static void exportar (){
+		try{
+
+		}catch (Exception e){
+			//:)
+		}
+	}
+
+
+}
