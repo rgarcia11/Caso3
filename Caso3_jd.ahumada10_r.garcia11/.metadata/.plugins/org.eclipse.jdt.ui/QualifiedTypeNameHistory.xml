@@ -3,4 +3,11 @@
 <fullyQualifiedTypeName name="uniandes.gload.core.LoadGenerator"/>
 <fullyQualifiedTypeName name="uniandes.gload.examples.clientserver.generator.ClientServerTask"/>
 <fullyQualifiedTypeName name="uniandes.gload.core.Task"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="colpensiones.Consolidado"/>
+<fullyQualifiedTypeName name="colpensiones.Generator"/>
 </qualifiedTypeNameHistroy>

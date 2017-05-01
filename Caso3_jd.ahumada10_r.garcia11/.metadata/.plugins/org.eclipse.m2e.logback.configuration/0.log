@@ -439,3 +439,7 @@
 2017-05-01 02:26:17,283 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\main\resources
 2017-05-01 02:26:17,284 [Worker-138] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-05-01 02:26:17,288 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\test\resources
+2017-05-01 02:32:12,462 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 02:32:12,469 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\main\resources
+2017-05-01 02:32:12,470 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-01 02:32:12,481 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\Rogelio Garcia\Documents\U\2017-I\Infracomp\Caso3\Caso3_jd.ahumada10_r.garcia11\ClienteSeguro\src\test\resources
