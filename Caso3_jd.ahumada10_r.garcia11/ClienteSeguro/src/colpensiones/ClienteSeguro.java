@@ -25,13 +25,13 @@ import org.bouncycastle.util.encoders.Base64;
 public class ClienteSeguro {
 
 	private static final int PUERTO = 8081;
-//	private static final String DIR = "192.168.0.11";
+	private static final String DIR = "192.168.0.13";
 //	private static final String DIR = "186.31.46.188";
-	private static final String DIR = "localhost";
+//	private static final String DIR = "localhost";
 	private static final String algoritmoSimetrico = "AES";
 	private static final String algoritmoAsimetrico = "RSA";
 	private static final String algoritmoDigest = "HMACMD5";
-
+	
 	private Socket s;
 	private PrintWriter out;
 	private BufferedReader in;
@@ -88,7 +88,7 @@ public class ClienteSeguro {
 				writer.println("ERROR:(");
 				writer.close();
 			}catch (Exception x){
-				x.printStackTrace();
+//				x.printStackTrace();
 			}
 		}
 	}
@@ -185,7 +185,6 @@ public class ClienteSeguro {
 		byte[] consultaHash = cmd.calcular(cons, llaveSesion);
 		byte[] consultahHashCifrada = CifradorSimetricoAES.cifrarB(consultaHash, llaveSesion);
 		String consultaCompleta = toHexString(consultaCifrada)+":"+toHexString(consultahHashCifrada);
-		System.out.println(consultaCompleta);
 		//Tiempo1 consulta!
 		inicioRespuesta = System.nanoTime();
 		out.println(consultaCompleta);
@@ -207,9 +206,9 @@ public class ClienteSeguro {
 		byte[] bytes = cifradorAsim.descifrar(bytesCifrados);
 		bytesCifrados = CifradorAsimetricoRSA.cifrar(llaveServidor, bytes);
 		String rta = toHexString(bytesCifrados);
+		out.println(rta);
 		//Tiempo2 autenticacion cliente
 		tiempoAutenticacionCliente = System.nanoTime() - inicioAutenticacionCliente;
-		out.println(rta);
 	}
 
 	private BigInteger recibirRespuestaReto(BigInteger bg) throws Exception {

@@ -33,13 +33,10 @@ public class CifradorAsimetricoRSA {
 			String pwd = stdIn.readLine();
 			byte [] clearText = pwd.getBytes();
 			String s1 = new String (clearText);
-			System.out.println("clave original: " + s1);
 			cipher.init(Cipher.ENCRYPT_MODE, keyPair.getPublic());
 			long startTime = System.nanoTime();
 			byte [] cipheredText = cipher.doFinal(clearText);
 			long endTime = System.nanoTime();
-			System.out.println("clave cifrada: " + cipheredText);
-			System.out.println("Tiempo asimetrico: " + (endTime - startTime));
 			return cipheredText;
 		}
 		catch (Exception e) {

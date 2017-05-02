@@ -30,10 +30,8 @@ public class CalculadorDigestHmacMD5 {
 			
 			byte[] text = dato.getBytes();
 			String s1 = new String(text);
-			System.out.println("dato original: " + s1);
 			byte [] digest = mac.doFinal(text);
 			String s2 = new String(digest);
-			System.out.println("digest: "+ s2);
 			return digest;
 		}
 		catch (Exception e) {
