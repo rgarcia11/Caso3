@@ -1,0 +1,54 @@
+====Parametros!!=============================
+Numero de transacciones por iteracion: 400
+Ramp-up de: 20
+Numero de threads: 2
+====Iteracion 1=============================
+tiempo de autenticacion del servidor: 65
+tiempo de autenticacion del cliente: 6
+tiempo de recibir respuesta a la consulta: 4
+Numero de transacciones fallidas: 215
+====Iteracion 2=============================
+tiempo de autenticacion del servidor: 68
+tiempo de autenticacion del cliente: 4
+tiempo de recibir respuesta a la consulta: 3
+Numero de transacciones fallidas: 332
+====Iteracion 3=============================
+tiempo de autenticacion del servidor: 62
+tiempo de autenticacion del cliente: 5
+tiempo de recibir respuesta a la consulta: 5
+Numero de transacciones fallidas: 331
+====Iteracion 4=============================
+tiempo de autenticacion del servidor: 60
+tiempo de autenticacion del cliente: 3
+tiempo de recibir respuesta a la consulta: 4
+Numero de transacciones fallidas: 329
+====Iteracion 5=============================
+tiempo de autenticacion del servidor: 76
+tiempo de autenticacion del cliente: 9
+tiempo de recibir respuesta a la consulta: 8
+Numero de transacciones fallidas: 341
+====Iteracion 6=============================
+tiempo de autenticacion del servidor: 61
+tiempo de autenticacion del cliente: 4
+tiempo de recibir respuesta a la consulta: 5
+Numero de transacciones fallidas: 333
+====Iteracion 7=============================
+tiempo de autenticacion del servidor: 62
+tiempo de autenticacion del cliente: 3
+tiempo de recibir respuesta a la consulta: 4
+Numero de transacciones fallidas: 333
+====Iteracion 8=============================
+tiempo de autenticacion del servidor: 65
+tiempo de autenticacion del cliente: 8
+tiempo de recibir respuesta a la consulta: 4
+Numero de transacciones fallidas: 334
+====Iteracion 9=============================
+tiempo de autenticacion del servidor: 66
+tiempo de autenticacion del cliente: 5
+tiempo de recibir respuesta a la consulta: 11
+Numero de transacciones fallidas: 340
+====Iteracion 10=============================
+tiempo de autenticacion del servidor: 57
+tiempo de autenticacion del cliente: 2
+tiempo de recibir respuesta a la consulta: 2
+Numero de transacciones fallidas: 363
